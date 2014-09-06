@@ -6,7 +6,6 @@
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-mustache": "~0.1.6",
     "grunt-contrib-uglify": "~0.3.1",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-cssmin": "~0.7.0",
@@ -24,7 +23,8 @@
     "load-grunt-tasks": "~0.3.0",
     "connect-livereload": "~0.3.2",
     "time-grunt": "~0.2.8",
-    "jshint-stylish": "~0.1.5"
+    "jshint-stylish": "~0.1.5",
+    "grunt-contrib-hogan": "^0.2.4"
   },
   "engines": {
     "node": ">=0.10.0"

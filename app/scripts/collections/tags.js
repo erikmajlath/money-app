@@ -9,7 +9,7 @@ define([
     'use strict';
 
     var TagsCollection = Backbone.Collection.extend({
-        model: TagsModel,
+        model: TagModel,
 
         localstorage: new LocalStorage('tags'),
     });

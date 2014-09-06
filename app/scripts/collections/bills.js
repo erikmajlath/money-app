@@ -5,7 +5,7 @@ define([
     'backbone',
     'models/bill',
     'localstorage',
-], function (_, Backbone, BillsModel, LocalStorage) {
+], function (_, Backbone, BillModel, LocalStorage) {
     'use strict';
 
     var BillsCollection = Backbone.Collection.extend({

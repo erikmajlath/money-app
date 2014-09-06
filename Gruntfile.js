@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= yeoman.app %>/scripts/templates/*.mustache'
                 ],
-                tasks: ['mustache']
+                tasks: ['hogan:publish']
             },
             test: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'test/spec/**/*.js'],
@@ -228,13 +228,21 @@ module.exports = function (grunt) {
                 rjsConfig: '<%= yeoman.app %>/scripts/main.js'
             }
         },
-        mustache: {
-            files: {
-                src: '<%= yeoman.app %>/scripts/templates/',
-                dest: '.tmp/scripts/templates.js',
+        hogan: {
+            publish: {
                 options: {
-                    prefix: 'define(function() { this.JST = ',
-                    postfix: '; return this.JST;});'
+                    //prettify: true,
+                    namespace: 'JST',
+                    defaultName: function(file) {
+                        return require('path').basename(file, '.mustache');
+                    },
+                    amdWrapper: true,
+                    amdRequire: {
+                        hogan: "Hogan",
+                    },
+                },
+                files:{
+                    ".tmp/scripts/templates.js": ["<%= yeoman.app %>/scripts/templates/*.mustache"]
                 }
             }
         },
@@ -270,7 +278,7 @@ module.exports = function (grunt) {
             return grunt.task.run([
                 'clean:server',
                 'createDefaultTemplate',
-                'mustache',
+                'hogan:publish',
                 'connect:test',
                 'open:test',
                 'watch'
@@ -280,7 +288,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'createDefaultTemplate',
-            'mustache',
+            'hogan:publish',
             'connect:livereload',
             'open:server',
             'watch'
@@ -292,7 +300,7 @@ module.exports = function (grunt) {
         var testTasks = [
                 'clean:server',
                 'createDefaultTemplate',
-                'mustache',
+                'hogan:publish',
                 'connect:test',
                 'mocha',
             ];
@@ -309,7 +317,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'createDefaultTemplate',
-        'mustache',
+        'hogan:publish',
         'useminPrepare',
         'requirejs',
         'imagemin',
