@@ -12,12 +12,12 @@ define([
         },
 
         defaults: {
-            text: 'Common bill',
+            subject: 'Common bill',
             category: -1,
             tags: [],
-            amount: 0,
+            cost: 0,
             currency: 'EUR',
-            date: 0,
+            date: new Date().getTime(),
         },
 
         validate: function(attrs, options) {

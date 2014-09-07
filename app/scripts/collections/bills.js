@@ -11,7 +11,7 @@ define([
     var BillsCollection = Backbone.Collection.extend({
         model: BillModel,
 
-        localstorage: new LocalStorage('bills'),
+        localStorage: new LocalStorage('bills'),
 
         initialize: function(){
             this.pointer = 0;

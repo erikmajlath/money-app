@@ -11,6 +11,8 @@ define([
     var TagsCollection = Backbone.Collection.extend({
         model: TagModel,
 
+        url: '',
+
         localstorage: new LocalStorage('tags'),
     });
 

@@ -2,7 +2,97 @@ body {
     background: #f5f5f5;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+/* Common class */
+.g{
+	color: #ccc;
 }
+
+.f12{
+	font-size: 1.2em;
+}
+
+.f20{
+	font-size: 2em;
+}
+
+.ph10{
+	padding: 0 10px;
+}
+
+.pv10{
+	padding: 10px 0;
+}
+
+.p10{
+	padding: 10px;
+}
+
+.bdr{
+	border-right: 1px dashed #ccc;
+}
+
+.bdl{
+	border-left: 1px dashed #ccc;	
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+.nA{
+	cursor:not-allowed;
+}
+
+/* HomeView*/
+
+	/* AddBillView */
+
+	.aBC{
+
+	}
+
+	.aBSh{
+		background-color: #fff;
+		box-shadow: 0 0 20px #ccc;
+		margin-top: 20px;
+		line-height: 2em;
+	}
+
+	.aBR{
+		border-bottom: 1px dashed #ccc;
+	}
+
+	.aBD{
+		
+	}
+
+	/* Subject */
+	.aBS{
+
+	}
+
+	/* Nice Input */
+	.aBNI{
+		border: none !important;
+		float: left;
+		font-size: 2em !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		box-shadow: none !important;
+		outline: none !important;
+	}
+
+	/* Cost */
+	.aBCo{
+		text-align: right;
+	}
+
+	.aBSB{
+		padding: 2px;
+	}
+
+	.aBCuC{
+		padding-left:15px;
+	}
+
+	/* BillsView */

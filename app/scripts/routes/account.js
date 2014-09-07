@@ -28,6 +28,9 @@ define([
             Backbone.app.c.categories = new CategoriesCollection();
             Backbone.app.c.tags = new TagsCollection();
 
+            //Fetch
+            Backbone.app.c.bills.fetch();
+
             this.currentView = null;
 
             //Must be at the end
