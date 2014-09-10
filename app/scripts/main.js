@@ -18,6 +18,9 @@ require.config({
         },
         hogan:{
             exports: 'Hogan',
+        },
+        moment:{
+            exports: 'moment',
         }
     },
     paths: {
@@ -28,6 +31,7 @@ require.config({
         //Need to use older one cause of hogan.js package
         hogan: '../bower_components/hogan/web/builds/2.0.0/hogan-2.0.0.amd',
         localstorage: 'vendor/backbone.localStorage',
+        moment: '../bower_components/moment/moment',
     }
 });
 

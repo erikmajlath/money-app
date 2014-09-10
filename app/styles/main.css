@@ -88,11 +88,14 @@ body {
 	}
 
 	.aBSB{
-		padding: 2px;
 	}
 
 	.aBCuC{
 		padding-left:15px;
 	}
 
-	/* BillsView */
+	/* BillsListView */
+
+	.bLL .row{
+		border-bottom: 1px solid #DDD;
+	}

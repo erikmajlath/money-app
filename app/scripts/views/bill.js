@@ -11,21 +11,25 @@ define([
     var BillView = Backbone.View.extend({
         template: JST['bill-template'],
 
-        tagName: 'div',
-
-        id: '',
-
-        className: '',
-
         events: {},
 
         initialize: function () {
+            console.log('BillView initialize');
             this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
-        }
+            console.log('BillView render');
+            this.$el.html(this.template.render(this.model.toJSON()));
+
+            return this;
+        },
+
+        destroy: function(){
+            console.log('BillView destroy');
+
+            this.remove();
+        },
     });
 
     return BillView;
