@@ -1,17 +1,16 @@
 /*global define*/
 
 define([
+    'app',
     'jquery',
     'backbone',
     'collections/bills',
-    'collections/categories',
-    'collections/tags',
+    'collections/categories',    
     'views/home',
-], function ($, Backbone, BillsCollection, CategoriesCollection, TagsCollection,
-    HomeView) {
+], function (App, $, Backbone, BillsCollection, CategoriesCollection, HomeView) {
     'use strict';
 
-    var AccountRouter = Backbone.Router.extend({
+    var SimpleRouter = Backbone.Router.extend({
 
         routes: {
             '': 'home',
@@ -21,25 +20,27 @@ define([
         },
 
         initialize: function(){
-            console.log('AccountRouter initialize');
+            console.log('[SimpleRouter] initialize');
+            window.SimpleRouter = this;
 
-            Backbone.app.r.account = this;
-            Backbone.app.c.bills = new BillsCollection();
-            Backbone.app.c.categories = new CategoriesCollection();
-            Backbone.app.c.tags = new TagsCollection();
+            var that = this;
 
-            //Fetch
-            Backbone.app.c.bills.fetch();
+            //Initialize Collections
+            this.billsCollection = new BillsCollection();
+            this.categoriesCollecton = new CategoriesCollection();
 
+            this.billsCollection.fetch({});
+
+            //Storing current view
             this.currentView = null;
 
             //Must be at the end
-            console.log('Backbone.history started');
+            console.log('[SimpleRouter] Backbone.history started');
             Backbone.history.start();
         },
 
         changeView: function(view){
-            console.log('Changing View');
+            console.log('[SimpleRouter] Changing View');
 
             //Remove current view
             if(this.currentView){
@@ -54,10 +55,10 @@ define([
         },
 
         home: function(){
-            console.log('Home route');
+            console.log('[SimpleRouter] Home route');
             this.changeView(new HomeView());
         },
     });
 
-    return AccountRouter;
+    return SimpleRouter;
 });

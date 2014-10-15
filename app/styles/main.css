@@ -47,6 +47,17 @@ body {
 
 	/* AddBillView */
 
+	.no-border-no-padding{
+		border: none !important;
+		margin: 0 !important;
+	}
+
+	.aBC input{
+		padding: 1.25rem !important;
+		font-size: 1.25rem !important;
+		height: auto !important;
+	}
+
 	.aBC{
 
 	}

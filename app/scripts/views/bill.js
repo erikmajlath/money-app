@@ -14,19 +14,19 @@ define([
         events: {},
 
         initialize: function () {
-            console.log('BillView initialize');
+            console.log('[BillView] initialize');
             this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
-            console.log('BillView render');
+            console.log('[BillView] render');
             this.$el.html(this.template.render(this.model.toJSON()));
 
             return this;
         },
 
         destroy: function(){
-            console.log('BillView destroy');
+            console.log('[BillView] destroy');
 
             this.remove();
         },

@@ -2,8 +2,9 @@
 
 define([
     'underscore',
-    'backbone'
-], function (_, Backbone) {
+    'backbone',
+    'moment'
+], function (_, Backbone, moment) {
     'use strict';
 
     var BillModel = Backbone.Model.extend({
@@ -17,7 +18,7 @@ define([
             tags: [],
             cost: 0,
             currency: 'EUR',
-            date: new Date().getTime(),
+            date: moment().millisecond(),
         },
 
         validate: function(attrs, options) {

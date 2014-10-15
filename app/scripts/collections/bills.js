@@ -1,11 +1,13 @@
 /*global define*/
 
 define([
+    'app',
     'underscore',
     'backbone',
     'models/bill',
     'localstorage',
-], function (_, Backbone, BillModel, LocalStorage) {
+    'moment',
+], function (App ,_, Backbone, BillModel, LocalStorage, moment) {
     'use strict';
 
     var BillsCollection = Backbone.Collection.extend({
@@ -14,7 +16,14 @@ define([
         localStorage: new LocalStorage('bills'),
 
         initialize: function(){
+            var that = this;
+
             this.pointer = 0;
+
+            //Set this publicly available
+            App.reqres.setHandler('collection:bills', function(){
+                return that;
+            });
         },
 
         comparator: function(item){
@@ -29,6 +38,22 @@ define([
             var offset = offset || 0;
             var models = this.models.slice(10);
             return _(models).first(10);
+        },
+
+        getToday: function(){
+            console.log('[BillsCollection] getToday');
+            var today = moment();
+            return this.filter(function(item){
+                return moment(item.get('date')).isSame(moment(), 'day');
+            });
+        },
+
+        getWeek: function(){
+            console.log('[BillsCollection] getWeek');
+        },
+
+        getMonth: function(){
+            console.log('[BillsCollection] getMonth');
         },
     });
 
