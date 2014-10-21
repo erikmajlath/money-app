@@ -9,7 +9,7 @@
     "requirejs-text": "~2.0.10",
     "modernizr": "~2.7.1",
     "hogan": "~3.0.2",
-    "moment": "~2.8.3"
-  },
-  "devDependencies": {}
+    "moment": "~2.8.3",
+    "bootstrap": "~3.2.0"
+  }
 }

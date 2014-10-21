@@ -27,16 +27,14 @@ define([
             
             var billsCollection = App.reqres.request('collection:bills');
 
-            this.addBillView = new BillsAddView({collection: billsCollection});
-            this.billsListView = new BillsListView({collection: billsCollection}); 
+            this.billsAddView = new BillsAddView({collection: billsCollection});
         },
 
         render: function () {
             console.log('[HomeView] render');
 
             this.$el.html(this.template.render());
-            this.addBillView.setElement(this.$('.aBC')).render();
-            this.billsListView.setElement(this.$('.bLC')).render();
+            this.billsAddView.setElement(this.$('.bills-add')).render();
 
             return this;
         },
@@ -44,8 +42,7 @@ define([
         destroy: function(){
             console.log('[HomeView] destroy');
 
-            this.addBillView.destroy();
-            this.billsListView.destroy();
+            this.billsAddView.destroy();
             this.remove();
         },
     });
