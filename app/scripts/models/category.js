@@ -2,8 +2,9 @@
 
 define([
     'underscore',
-    'backbone'
-], function (_, Backbone) {
+    'backbone',
+    'moment',
+], function (_, Backbone, moment) {
     'use strict';
 
     var CategoryModel = Backbone.Model.extend({
@@ -13,6 +14,8 @@ define([
         },
 
         defaults: {
+            version: '0.1.0',
+            parent: 0,
         },
 
         validate: function(attrs, options) {

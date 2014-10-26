@@ -29,7 +29,8 @@ define([
             this.billsCollection = new BillsCollection();
             this.categoriesCollecton = new CategoriesCollection();
 
-            this.billsCollection.fetch({});
+            this.billsCollection.fetch();
+            this.categoriesCollecton.fetch();
 
             //Storing current view
             this.currentView = null;

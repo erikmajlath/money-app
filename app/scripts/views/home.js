@@ -34,7 +34,7 @@ define([
             console.log('[HomeView] render');
 
             this.$el.html(this.template.render());
-            this.billsAddView.setElement(this.$('.bills-add')).render();
+            this.billsAddView.setElement(this.$('.bills-add-container')).render();
 
             return this;
         },

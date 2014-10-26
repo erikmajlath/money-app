@@ -6,6 +6,7 @@ define([
     'underscore',
     'backbone',
     'templates',
+    'bootstrap',
 ], function (App, $, _, Backbone, JST) {
     'use strict';
 

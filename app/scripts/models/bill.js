@@ -13,11 +13,8 @@ define([
         },
 
         defaults: {
-            subject: 'Common bill',
-            category: -1,
-            tags: [],
-            cost: 0,
-            currency: 'EUR',
+            version: '0.1.0',
+            category: 0,
             date: moment().millisecond(),
         },
 

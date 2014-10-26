@@ -11,11 +11,15 @@ define([
     var CategoriesCollection = Backbone.Collection.extend({
         model: CategoryModel,
 
-        url: '',
+        localStorage: new LocalStorage('categories'),
 
-        localstorage: new LocalStorage('categories'),
-
-        
+        initialize: function(){
+            var that = this;
+            //Set handler
+            App.reqres.setHandler('collection:categories', function(){
+                return that;
+            });
+        },
     });
 
     return CategoriesCollection;
